@@ -23,6 +23,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@$_*8=qd-x+w^a@xv0a(7)u%a&09zu3#sc4#+ix*6oph25hl3b'
 
+LOGIN_URL = 'rango:login'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -115,6 +117,12 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
 
 
 # Static files (CSS, JavaScript, Images)
